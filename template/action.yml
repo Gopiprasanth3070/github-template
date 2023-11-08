@@ -8,17 +8,21 @@ inputs:
   namespace:
     description: 'Namespace to deploy to'
     required: true
-run: |
- #!/bin/bash
- echo "hello"
-shell: bash
-
-# runs:
-#   using: 'composite'
-#   steps:
-#     - run: echo "Deploying version ${{ inputs.version }} to namespace ${{ inputs.namespace }}"
 
 
+runs:
+  using: 'composite'
+  steps:
+    - run: echo "Deploying version ${{ inputs.version }} to namespace ${{ inputs.namespace }}"
+      shell: bash
+    
+### echo with bash
+# run: |
+#  #!/bin/bash
+#  echo "hello"
+# shell: bash
+
+### simple echo
 # run: |
 #  #!/bin/bash
 #  echo "hello"
